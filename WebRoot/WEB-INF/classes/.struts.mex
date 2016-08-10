@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="user" location="1519,517" size="976,136">
+    <action name="register" location="4720,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="register_success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="register.jsp" />
+      </result>
+    </action>
+    <action name="upload" location="4720,362" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="upoad_success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="upload_error.jsp" />
+      </result>
+    </action>
+    <action name="login" location="4475,362" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="scanFoler" location="4230,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="photoList.jsp" />
+      </result>
+    </action>
+    <action name="selectMyInfor" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="selectMyInfor.jsp" />
+      </result>
+    </action>
+    <action name="modifyUser" location="65,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifyuser_success.jsp" />
+      </result>
+    </action>
+    <action name="deleteFolder" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="createFolder" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="createfolder_success.jsp" />
+      </result>
+    </action>
+    <action name="hasUpload" location="800,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="uploadphoto.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="createFloder.jsp" />
+      </result>
+    </action>
+    <action name="deletePhoto" location="1045,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="photoList.jsp" />
+      </result>
+    </action>
+    <action name="scanPhoto" location="1290,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="photodetail.jsp" />
+      </result>
+      <result name="others">
+        <resourceEdge source="others" routing="0" target="othersscanphoto.jsp" />
+      </result>
+    </action>
+    <action name="findAllUser" location="1780,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allUserList.jsp" />
+      </result>
+    </action>
+    <action name="scanUser" location="2025,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="userinfor.jsp" />
+      </result>
+    </action>
+    <action name="addFriend" location="2515,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allUserlist.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="addfriend_tip.jsp" />
+      </result>
+    </action>
+    <action name="deleteFriend" location="2760,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="myFriendList.jsp" />
+      </result>
+    </action>
+    <action name="findFriends" location="3005,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="myFriendList.jsp" />
+      </result>
+    </action>
+    <action name="scanFriendFolder" location="3005,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="scanFriendFolder.jsp" />
+      </result>
+    </action>
+    <action name="scanFriendPhotos" location="3495,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="scanFriendPhoto.jsp" />
+      </result>
+      <result name="nolimit">
+        <resourceEdge source="nolimit" routing="0" target="scanfolder_failue.jsp" />
+      </result>
+    </action>
+    <action name="tocommentPhoto" location="3740,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="commentphoto.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="register_success.jsp" path="/register_success.jsp" location="5225,359" size="150,55" />
+  <webResource name="register.jsp" path="/register.jsp" location="4945,219" size="150,55" />
+  <webResource name="upoad_success.jsp" path="/upoad_success.jsp" location="4945,814" size="150,55" />
+  <webResource name="upload_error.jsp" path="/upload_error.jsp" location="5225,674" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="4700,9" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="4700,814" size="150,55" />
+  <webResource name="photoList.jsp" path="/photoList.jsp" location="4455,79" size="150,55" />
+  <webResource name="selectMyInfor.jsp" path="/selectMyInfor.jsp" location="10,674" size="150,55" />
+  <webResource name="modifyuser_success.jsp" path="/modifyuser_success.jsp" location="10,569" size="150,55" />
+  <webResource name="createfolder_success.jsp" path="/createfolder_success.jsp" location="535,219" size="150,55" />
+  <webResource name="uploadphoto.jsp" path="/uploadphoto.jsp" location="1025,219" size="150,55" />
+  <webResource name="createFloder.jsp" path="/createFloder.jsp" location="780,219" size="150,55" />
+  <webResource name="photodetail.jsp" path="/photodetail.jsp" location="1760,219" size="150,55" />
+  <webResource name="othersscanphoto.jsp" path="/othersscanphoto.jsp" location="1515,219" size="150,55" />
+  <webResource name="allUserList.jsp" path="/allUserList.jsp" location="2005,219" size="150,55" />
+  <webResource name="userinfor.jsp" path="/userinfor.jsp" location="2250,219" size="150,55" />
+  <webResource name="allUserlist.jsp" path="/allUserlist.jsp" location="2740,219" size="150,55" />
+  <webResource name="addfriend_tip.jsp" path="/addfriend_tip.jsp" location="2495,219" size="150,55" />
+  <webResource name="myFriendList.jsp" path="/myFriendList.jsp" location="4210,149" size="150,55" />
+  <webResource name="scanFriendFolder.jsp" path="/scanFriendFolder.jsp" location="3230,219" size="150,55" />
+  <webResource name="scanFriendPhoto.jsp" path="/scanFriendPhoto.jsp" location="3720,219" size="150,55" />
+  <webResource name="scanfolder_failue.jsp" path="/scanfolder_failue.jsp" location="3475,219" size="150,55" />
+  <webResource name="commentphoto.jsp" path="/commentphoto.jsp" location="3965,219" size="150,55" />
+</Struts2Diagram>
+

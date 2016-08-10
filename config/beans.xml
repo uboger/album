@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<bean id="userdaoimpl" class="com.album.dao.impl.UserDaoImpl"></bean>
+	
+	<bean id="photodaoimpl" class="com.album.dao.impl.PhotoDaoImpl"></bean>
+	
+	<bean id="commentdaoimpl" class="com.album.dao.impl.CommentDaoImpl"></bean>
+	
+	<bean id="folderdaoimpl" class="com.album.dao.impl.FolderDaoImpl">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="RegisterAction" class="com.album.actions.UserRegisterAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="LoginAction" class="com.album.actions.UserLoginAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+		<property name="interFolder" ref="folderdaoimpl"></property>
+	</bean>
+	
+	<bean id="UploadAction" class="com.album.actions.UploadPhotoAction">
+		<property name="interPhoto" ref="photodaoimpl"></property>
+	</bean>
+	
+	<bean id="SelectMyInforAction" class="com.album.actions.SelectMyInforAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="ScanUserAction" class="com.album.actions.ScanUserAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="ScanPhotoAction" class="com.album.actions.ScanPhotoAction">
+		<property name="interPhoto" ref="photodaoimpl"></property>
+	</bean>
+	
+	<bean id="ScanFriendFolderAction" class="com.album.actions.ScanFriendFolderAction">
+		<property name="interFolder" ref="folderdaoimpl"></property>
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="ModifyUserAction" class="com.album.actions.ModifyUserAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="CreateFolderAction" class="com.album.actions.CreateFolderAction">
+		<property name="interFolder" ref="folderdaoimpl"></property>
+	</bean>
+	
+	<bean id="PrepareUploadAction" class="com.album.actions.PrepareUploadAction">
+		<property name="interFolder" ref="folderdaoimpl"></property>
+	</bean>
+	
+	<bean id="ScanFoldreAction" class="com.album.actions.ScanFoldreAction">
+		<property name="interPhoto" ref="photodaoimpl"></property>
+		<property name="interFolder" ref="folderdaoimpl"></property>
+	</bean>
+	
+	<bean id="DeletePhotoAction" class="com.album.actions.DeletePhotoAction">
+		<property name="interPhoto" ref="photodaoimpl"></property>
+	</bean>
+	
+	<bean id="FindAllUserAction" class="com.album.actions.FindAllUserAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="AddFriendAction" class="com.album.actions.AddFriendAction">
+		<property name="interUser" ref="userdaoimpl"></property>
+	</bean>
+	
+	<bean id="ScanFriendPhotoAction" class="com.album.actions.ScanFriendPhotoAction">  
+		<property name="interPhoto" ref="photodaoimpl"></property>
+		<property name="interFolder" ref="folderdaoimpl"></property>
+	</bean>
+</beans>

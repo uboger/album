@@ -1,0 +1,100 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="user" extends="struts-default" namespace="/">
+		<action name="register" class="RegisterAction">
+			<result>/register_success.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+		<action name="upload" class="UploadAction">
+			<result>/upoad_success.jsp</result>
+			<result name="input">/upload_error.jsp</result>
+		</action>
+		<action name="login" class="LoginAction">
+			<result>/index.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="scanFoler" class="ScanFoldreAction">
+			<result>/photoList.jsp</result>
+		</action>
+		<action name="selectMyInfor" class="SelectMyInforAction">
+			<result>/selectMyInfor.jsp</result>
+		</action>
+		<action name="modifyUser" class="ModifyUserAction">
+			<result>/modifyuser_success.jsp</result>
+			<result name="input" type="redirectAction">
+				<param name="actionName">scanUser</param>
+				<param name="namespace">/</param>
+				
+			</result>
+		</action>
+		<action name="deleteFolder" class="DeleteFolderAction">
+			<result>/index.jsp</result>
+		</action>
+		<action name="createFolder" class="CreateFolderAction">
+			<result>/createfolder_success.jsp</result>
+		</action>
+		<action name="hasUpload" class="PrepareUploadAction">
+			<result>/uploadphoto.jsp</result>
+			<result name="input">/createFolder.jsp</result>
+		</action>
+		<action name="deletePhoto" class="DeletePhotoAction">
+			
+			<result type="redirectAction">
+				<param name="actionName">scanFoler</param>
+				<param name="namespace">/</param>
+				<param name="folder.id">${folder.id}</param>
+				<param name="folder.foldername">${folder.foldername}</param>
+			</result>
+		</action>
+		<action name="scanPhoto" class="ScanPhotoAction">
+			<result>/photodetail.jsp</result>
+			<result name="others">/othersscanphoto.jsp</result>
+		</action>
+		<action name="findAllUser" class="FindAllUserAction">
+			<result>/allUserList.jsp</result>
+		</action>
+		<action name="scanUser" class="ScanUserAction">
+			<result>/userinfor.jsp</result>
+		</action>
+		<action name="addFriend" class="AddFriendAction">
+			<result name="input">/addfriend_tip.jsp</result>
+			<result type="redirectAction">
+				<param name="actionName">findAllUser</param>
+				<param name="user.id">${user.id}</param>
+			</result>
+		</action>
+		<action name="deleteFriend" class="DeleteFriendAction">
+			<result>/myFriendList.jsp</result>
+		</action>
+		<action name="findFriends" class="FindFriendAction">
+			<result>/myFriendList.jsp</result>
+		</action>
+		<action name="scanFriendFolder" class="ScanFriendFolderAction">
+			<result>/scanFriendFolder.jsp</result>
+		</action>
+		<action name="scanFriendPhotos" class="ScanFriendPhotoAction">
+			<result>/scanFriendPhoto.jsp</result>
+			<result name="nolimit" >/scanfolder_failue.jsp</result>
+		</action>
+		<action name="tocommentPhoto" class="PrepareCommentAction">
+			<result>/commentphoto.jsp</result>
+		</action>
+		<action name="addcomment" class="AddCommentAction">
+			<result>/addcomment_success.jsp</result>
+		</action>
+		<action name="newcomment" class="NewCommentAction">
+			<result>/allcomment.jsp</result>
+		</action>
+		<action name="scancomment" class="ScanCommentAction">
+			<result>/commentinfor.jsp</result>
+		</action>
+		<action name="deleteComment" class="DeleteCommentAction">
+			<result>/allcomment.jsp</result>
+		</action>
+	</package>
+</struts>
